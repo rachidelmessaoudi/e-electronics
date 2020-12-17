@@ -14,8 +14,8 @@ export class CheckoutComponent implements OnInit {
   totalPrice:number=0;
   totalQuantity:number=0;
 
-  creditCardYears: number[]=[];
-  creditCardMonths: number[]=[];
+  creditCardYears: number[] = [];
+  creditCardMonths: number[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private electronicsFormService:ElectronicsFormService) { }
@@ -51,21 +51,24 @@ export class CheckoutComponent implements OnInit {
       })
     });
 
-    //populate creadit card months
-    const startMonth: number=new Date().getMonth()+1;
-    console.log("startMonth: "+startMonth);
+    // populate credit card months
+
+    const startMonth: number = new Date().getMonth() + 1;
+    console.log("startMonth: " + startMonth);
 
     this.electronicsFormService.getCreditCardMonths(startMonth).subscribe(
-      data =>{
-        console.log("Retrieved credit card months: "+JSON.stringify(data));
-        this.creditCardMonths=data;
+      data => {
+        console.log("Retrieved credit card months: " + JSON.stringify(data));
+        this.creditCardMonths = data;
       }
     );
-    //populate credit card years
+
+    // populate credit card years
+
     this.electronicsFormService.getCreditCardYears().subscribe(
-      data =>{
-        console.log("Retrieved credit card years: "+JSON.stringify(data));
-        this.creditCardYears=data;
+      data => {
+        console.log("Retrieved credit card years: " + JSON.stringify(data));
+        this.creditCardYears = data;
       }
     );
   }
@@ -84,4 +87,24 @@ export class CheckoutComponent implements OnInit {
   }
 
 
+  handleMonthsAndYears() {
+    const creditCardFormGroup=this.checkoutFormGroup.get('creditCard');
+
+    const currentYear:number=new Date().getFullYear();
+    const selectedYear:number=Number(creditCardFormGroup.value.expirationYear);
+
+    //if the current year equals the selected year, then start with current month
+    let startMonth: number;
+    if(currentYear=== selectedYear){
+      startMonth=new Date().getMonth()+1;
+    }else {
+      startMonth=1;
+    }
+    this.electronicsFormService.getCreditCardMonths(startMonth).subscribe(
+      data=>{
+        console.log("Retrieved credit card months: "+JSON.stringify(data));
+        this.creditCardMonths=data;
+      }
+    );
+  }
 }
