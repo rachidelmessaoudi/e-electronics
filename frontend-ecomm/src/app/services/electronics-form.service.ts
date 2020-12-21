@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {Country} from '../classes/country';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import {State} from '../classes/state';
 
 

@@ -61,7 +61,7 @@ export class CheckoutComponent implements OnInit {
 
     // populate credit card months
 
-    const startMonth: number = new Date().getMonth() + 1;
+    const startMonth: number = new Date().getMonth()+1;
     console.log("startMonth: " + startMonth);
 
     this.electronicsFormService.getCreditCardMonths(startMonth).subscribe(
@@ -89,9 +89,9 @@ export class CheckoutComponent implements OnInit {
   }
   copyShippingAddressToBillingAddress(event) {
 
-    if(event.target.cheked){
+    if(event.target.checked){
       this.checkoutFormGroup.controls.billingAddress
-        .setValue(this.checkoutFormGroup.controls.value);
+        .setValue(this.checkoutFormGroup.controls.shippingAddress.value);
 
       //bug fix for states
       this.billingAddressStates=this.shippingAddressStates;
