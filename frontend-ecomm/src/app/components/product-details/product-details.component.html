@@ -1,5 +1,38 @@
 <div class="detail-section">
   <div class="container-fluid">
+    <!-- Start Cowndown Area -->
+    <section class="cown-down">
+      <div class="section-inner ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 col-12 padding-right">
+              <div class="image">
+                <img src="{{ product.imageUrl }}" alt="#">
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 padding-left">
+              <div class="content">
+                <div class="heading-block">
+                  <h3 class="title">{{ product.name }}</h3>
+                  <p class="small-title">Description</p>
+                  <p class="text">{{ product.description }}</p>
+                  <h1 class="price">{{ product.unitPrice | currency:'USD' }}</h1>
+                  <div class="coming-time">
+                    <div class="clearfix" >
+                      <button (click)="addToCart()" class="btn btn-dark">Add to cart</button>
+                    </div>
+                    <div class="clearfix" >
+                      <a routerLink="/products" class="mt-5" style="size: 100px"><i class="fas fa-angle-double-left"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /End Cowndown Area
 
     <img src="{{ product.imageUrl }}" class="detail-img">
 
@@ -11,6 +44,8 @@
     <h4>Description</h4>
     <p>{{ product.description }}</p>
 
-    <a routerLink="/products" class="mt-5"><i class="fas fa-angle-double-left"></i></a>
+    <a routerLink="/products" class="mt-5"><i class="fas fa-angle-double-left"></i></a>-->
+
+
   </div>
 </div>

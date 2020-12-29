@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {Product} from '../../classes/product';
 import {ActivatedRoute} from '@angular/router';
-import {consoleTestResultHandler} from 'tslint/lib/test';
 import {CartItem} from '../../classes/cart-item';
 import {CartService} from '../../services/cart.service';
 import {HttpEventType, HttpResponse} from '@angular/common/http';

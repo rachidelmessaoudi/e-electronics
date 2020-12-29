@@ -3,44 +3,45 @@
     <div class="container-fluid">
       <div class="row">
         <!--card-->
-        <div *ngFor="let tempProduct of products" class="col-md-3">
-        <div class="card" style="width: 18rem;">
-          <a routerLink="/products/{{ tempProduct.id }}">
-            <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
-          </a>
-          <div class="card-body">
-            <a routerLink="/products/{{ tempProduct.id }}">
-              <p>{{ tempProduct.name }}</p>
-            </a>
-            <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
-            <button (click)="addToCart(tempProduct)" class="btn btn-dark btn-sm"><i class="fa fa-shopping-cart"></i></button>
-            <button  (click)="onEditPhoto(tempProduct)" class="btn btn-dark btn-sm"><i class="fas fa-edit"></i></button>
-            <p *ngIf="editPhoto && currentProduct==tempProduct">
-              <input type="file" (change)="onSelectedFile($event)">
-              <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
-              {{progress}}
-            </p>
-          </div>
-        </div>
-        </div>
-        <!-- loop over the collection of products
-        <div *ngFor="let tempProduct of products" class="col-md-3">
+                <div *ngFor="let tempProduct of products" class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                  <a routerLink="/products/{{ tempProduct.id }}">
+                    <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                  </a>
+                  <div class="card-body">
+                    <a routerLink="/products/{{ tempProduct.id }}">
+                      <p>{{ tempProduct.name }}</p>
+                    </a>
+                    <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
+                    <button (click)="addToCart(tempProduct)" class="btn btn-dark btn-sm"><i class="fa fa-shopping-cart"></i></button>
+                    <button  (click)="onEditPhoto(tempProduct)" class="btn btn-dark btn-sm"><i class="fas fa-edit"></i></button>
+                    <p *ngIf="editPhoto && currentProduct==tempProduct">
+                      <input type="file" (change)="onSelectedFile($event)">
+                      <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
+                      {{progress}}
+                    </p>
+                  </div>
+                </div>
+                </div>
 
-          <div class="product-box">
+                <!-- loop over the collection of products
+                <div *ngFor="let tempProduct of products" class="col-md-3">
 
-            <a routerLink="/products/{{ tempProduct.id }}">
-              <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
-            </a>
+                  <div class="product-box">
 
-            <a routerLink="/products/{{ tempProduct.id }}">
-              <h1>{{ tempProduct.name }}</h1>
-            </a>
+                    <a routerLink="/products/{{ tempProduct.id }}">
+                      <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                    </a>
 
-            <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
-            <button (click)="addToCart(tempProduct)" class="btn btn-dark btn-sm">Add to cart</button>
-          </div>
+                    <a routerLink="/products/{{ tempProduct.id }}">
+                      <h1>{{ tempProduct.name }}</h1>
+                    </a>
 
-        </div> -->
+                    <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
+                    <button (click)="addToCart(tempProduct)" class="btn btn-dark btn-sm">Add to cart</button>
+                  </div>
+
+                </div> -->
 
         <!-- if products empty then display a message-->
         <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
