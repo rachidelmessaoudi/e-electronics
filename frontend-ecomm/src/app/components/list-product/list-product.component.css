@@ -1,1 +1,68 @@
 
+.product-item {
+  margin-bottom: 30px;
+  transition: all 0.3s ease 0s;
+}
+.product-img img {
+  width: 100%;
+}
+.product-info {
+  background: #f6f6f6 none repeat scroll 0 0;
+  padding: 20px 0;
+  text-align: center;
+}
+.product-title a{
+  color: #434343;
+  font-family: "Raleway",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pro-rating {
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.pro-rating a {
+  color: #ff7f00;
+  font-size: 14px;
+}
+.pro-price {
+  color: #666666;
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 20px;
+  z-index: 9;
+}
+.action-button {}
+.action-button > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.action-button > li:last-child {
+  margin-right: 0;
+}
+.action-button > li > a {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #999999;
+  display: block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+}
+.action-button > li:hover > a {
+  background: #19caaf;
+  border-color: #19caaf;
+  color: #fff;
+}
+.product-item {
+  box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
+}

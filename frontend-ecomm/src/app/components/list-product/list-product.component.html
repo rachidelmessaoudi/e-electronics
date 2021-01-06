@@ -2,7 +2,45 @@
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <div class="row">
-        <!--card-->
+        <!-- product-item start -->
+        <div *ngFor="let tempProduct of products" class="col-md-3 col-sm-4 col-xs-12">
+          <div class="product-item">
+            <div class="product-img">
+              <a routerLink="/products/{{ tempProduct.id }}">
+                <img src="{{ tempProduct.imageUrl }}" alt=""/>
+              </a>
+            </div>
+            <div class="product-info">
+              <h6 class="product-title">
+                <a routerLink="/products/{{ tempProduct.id }}">{{ tempProduct.name }}</a>
+              </h6>
+              <div class="pro-rating">
+                <a href="#"><i class="fal fa-star"></i></a>
+                <a href="#"><i class="fal fa-star"></i></a>
+                <a href="#"><i class="fal fa-star"></i></a>
+                <a href="#"><i class="zmdi zmdi-star-half"></i></a>
+                <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
+              </div>
+              <h3 class="pro-price">{{ tempProduct.unitPrice | currency:'USD' }}</h3>
+              <ul class="action-button">
+                <li>
+                  <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
+                </li>
+                <li>
+                  <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
+                </li>
+                <li>
+                  <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+                </li>
+                <li>
+                  <a (click)="addToCart(tempProduct)"><i class="far fa-cart-plus"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- product-item end -->
+        <!--card
                 <div *ngFor="let tempProduct of products" class="col-md-3">
                 <div class="card" style="width: 18rem;">
                   <a routerLink="/products/{{ tempProduct.id }}">
@@ -22,7 +60,7 @@
                     </p>
                   </div>
                 </div>
-                </div>
+                </div>-->
 
                 <!-- loop over the collection of products
                 <div *ngFor="let tempProduct of products" class="col-md-3">
